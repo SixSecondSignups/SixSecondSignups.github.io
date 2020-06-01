@@ -25,3 +25,11 @@ function howitworks() {
 function pricing() {
   mixpanel.track("pricing");
 }
+
+function contactMailLink() {
+  mixpanel.track("contactMailLink");
+}
+
+function pressMailLink() {
+  mixpanel.track("pressMailLink");
+}
