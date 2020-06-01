@@ -2,6 +2,10 @@ function loadPage() {
   mixpanel.track("Page Load");
 }
 
+function loadPrivacyPage() {
+  mixpanel.track("Privacy Page Load");
+}
+
 function clickCTA() {
   mixpanel.track("CTA Click");
 }
