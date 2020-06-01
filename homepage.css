@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+
+@font-face {
+    font-family: "Avenir-Book";
+    src: "assets/fonts/avenir/Avenir-Book.ttf";
+}
+@font-face {
+    font-family: "Avenir-Light";
+    src: "assets/fonts/avenir/Avenir-Light.ttf";
+}
+@font-face {
+    font-family: "Avenir-Roman";
+    src: "assets/fonts/avenir/Avenir-Roman.ttf";
+}
+@font-face {
+    font-family: "Avenir-Medium";
+    src: "assets/fonts/avenir/Avenir-Medium.ttf";
+}
+@font-face {
+    font-family: "Avenir-Heavy";
+    src: "assets/fonts/avenir/Avenir-Heavy.ttf";
+}
+
+/*Global styles*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 3rem;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  color: black;
+  /*line-height:82px;*/
+}
+
+/*Fold 1 - Main CTA*/
+
+/*Show blur background in larger devices*/
+@media (min-width: 992px) {
+  .fold1 {
+    background-color: #FFEFF5;
+    background-image: url('assets/img/pink blur.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right; 
+  }
+}
+
+/*And hide it in Smaller Devices */
+@media (max-width: 991px) {
+  .fold1 {
+      background-color: #FFEFF5;
+      background-image: none;
+  }
+}
+
+.titleMessage h1 {
+  font-size: 3.5rem;
+}
+
+.nav-link {
+  font-family: "Avenir-Roman";
+  color: #FF005B;
+  font-size: 1.1rem;
+}
+
+.nav-link:hover {
+  color: black;
+}
+
+.descriptionMessage {
+  /*background-color: lightgrey;*/
+  font-family: Avenir-Book;
+  font-size: 1.3rem;
+}
+
+.CTAIcon {
+  /*background-color: pink;*/
+  width: 2.15rem;
+}
+
+.CTAText {
+  /*background-color: yellow;*/
+  font-family: Avenir-Medium;
+  font-size: 1.25rem;
+}
+
+.CTAbtn {
+  background-color:#FF005B;
+  color:#ffffff;
+  border:0;
+}
+
+.CTAbtn:hover {
+  background-color: black;
+}
+
+/*Fold 2 - Features*/
+
+.fold2 {
+  background-color: white;
+}
+
+.featuresTitle {
+  background-color: white;
+}
+
+.features {
+  background-color: white;
+}
+
+.feature {
+  background-color: #FFEFF5;
+  border-radius: 2.8rem;
+  /*width: 20%;
+  flex: 0 0 20%;
+  max-width: 20%;*/
+}
+
+.featureText {
+  font-family: "Avenir-Roman";
+  font-size: 1.5rem;
+}
+
+/*Fold 3 - How it works*/
+
+.fold3 {
+  background-color: #FFEFF5; 
+  color: #FF005B;
+}
+
+.fold3 h1 {
+  color: #FF005B;
+}
+
+.howItWorksContainer {
+  /*background-color: blue;*/
+  /*width: 44.4%;
+  flex: 0 0 44.4%;
+  max-width: 44.4%;*/
+}
+
+.stepContainer {
+  /*background-color: lightgrey;*/
+}
+
+.stepImage {
+  /*background-color: olive;*/
+}
+
+.stepTextContainer {
+  /*background-color: yellow;*/
+}
+
+.stepTitle {
+  font-family: Avenir-Heavy;
+  font-size: 1.375rem;
+}
+
+.stepText {
+  font-family: "Avenir-Roman";
+  font-size: 1.25rem;
+}
+
+/*Fold 4 - Pricing*/
+
+.fold4 {
+  background-color: white;
+}
+
+.pricingTitle h1 {
+  font-size: 5.1rem;
+}
+
+.pricingSubtitleText {
+  color: #424242;
+  font-family: "Avenir-Roman";
+  font-size: 1.25rem;
+}
+
+.pinkText {
+  color: #FF005B;
+}
+
+/*Fold 5 - Footer*/
+
+.fold5 {
+  background-color: #FFEFF5;
+}
+
+.copyright {
+  font-family: 'Poppins';
+  font-weight: 400;
+  color: #7A7A7A;
+  font-size: 1rem;
+}
+
+.footerLinks {
+  font-family: 'Poppins';
+  font-weight: 400;
+  color: #414464;
+  font-size: 1.125rem;
+}
