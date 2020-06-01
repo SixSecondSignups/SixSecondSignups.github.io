@@ -210,7 +210,7 @@ h1 {
   font-size: 1rem;
 }
 
-.footerLinks {
+.footerLinks a {
   font-family: 'Poppins';
   font-weight: 400;
   color: #414464;
