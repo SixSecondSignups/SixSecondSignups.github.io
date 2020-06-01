@@ -95,9 +95,19 @@ h1 {
   border:0;
 }
 
+.CTAbtn:link {background-color: black;}    /* unvisited link, same as regular 'a' */
+.CTAbtn:visited {background-color: #FF005B;} /* visited link */
 .CTAbtn:hover {
   background-color: black;
-}
+  text-decoration: none;
+  color: white;
+}   /* mouse over link */
+.CTAbtn span:hover {
+  text-decoration: none;
+  color: white;
+}   /* mouse over link *
+.CTAbtn:focus {background-color: black;}   /* link has focus */
+.CTAbtn:active {background-color: black;}  /* selected link */
 
 /*Fold 2 - Features*/
 
