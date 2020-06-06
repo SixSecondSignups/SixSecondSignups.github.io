@@ -2,23 +2,23 @@
 
 @font-face {
     font-family: "Avenir-Book";
-    src: "assets/fonts/avenir/Avenir-Book.ttf";
+    src: url("assets/fonts/avenir/Avenir-Book.ttf");
 }
 @font-face {
     font-family: "Avenir-Light";
-    src: "assets/fonts/avenir/Avenir-Light.ttf";
+    src: url("assets/fonts/avenir/Avenir-Light.ttf");
 }
 @font-face {
     font-family: "Avenir-Roman";
-    src: "assets/fonts/avenir/Avenir-Roman.ttf";
+    src: url("assets/fonts/avenir/Avenir-Roman.ttf");
 }
 @font-face {
     font-family: "Avenir-Medium";
-    src: "assets/fonts/avenir/Avenir-Medium.ttf";
+    src: url("assets/fonts/avenir/Avenir-Medium.ttf");
 }
 @font-face {
     font-family: "Avenir-Heavy";
-    src: "assets/fonts/avenir/Avenir-Heavy.ttf";
+    src: url("assets/fonts/avenir/Avenir-Heavy.ttf");
 }
 
 /*Global styles*/
@@ -81,6 +81,7 @@ h1 {
 .CTAIcon {
   /*background-color: pink;*/
   width: 2.15rem;
+  height: 2.15rem;
 }
 
 .CTAText {
@@ -98,12 +99,12 @@ h1 {
 .CTAbtn:link {background-color: #FF005B;}    /* unvisited link, same as regular 'a' */
 .CTAbtn:visited {background-color: #FF005B;} /* visited link */
 .CTAbtn:hover {
-  background-color: black;
+  background-color: #42383c;
   text-decoration: none;
   color: white;
 }   /* mouse over link */
 .CTAbtn span:hover {
-  background-color: black;
+  background-color: #42383c;
   text-decoration: none;
   color: white;
 }   /* mouse over link */
@@ -126,7 +127,7 @@ h1 {
 
 .feature {
   background-color: #FFEFF5;
-  border-radius: 2.8rem;
+  /*border-radius: 2.8rem;*/
   /*width: 20%;
   flex: 0 0 20%;
   max-width: 20%;*/
@@ -134,7 +135,7 @@ h1 {
 
 .featureText {
   font-family: "Avenir-Roman";
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 /*Fold 3 - How it works*/
