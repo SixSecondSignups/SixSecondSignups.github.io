@@ -13,6 +13,10 @@
     src: url("assets/fonts/avenir/Avenir-Roman.ttf");
 }
 @font-face {
+    font-family: "Avenir-Next-Italic";
+    src: url("assets/fonts/avenir/Avenir-Next-Italic.ttf");
+}
+@font-face {
     font-family: "Avenir-Medium";
     src: url("assets/fonts/avenir/Avenir-Medium.ttf");
 }
@@ -196,6 +200,7 @@ h1 {
 
 .pinkText {
   color: #FF005B;
+  font-family: "Avenir-Next-Italic";
 }
 
 /*Fold 5 - Footer*/
