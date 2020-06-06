@@ -96,10 +96,15 @@ function deleteAllCookies() {
 // Functions around identifying users
 
 function identifyUser() {
+  var e = deviceData.init();
   mixpanel.people.set({
-  "First visit date": getFirstVisitDate(),    // Send dates in ISO timestamp format (e.g. "2020-01-02T21:07:03Z")
-  "SSS identifier": getUserIdentifier()    // use human-readable names
-});
+    "First visit date": getFirstVisitDate(),    // Send dates in ISO timestamp format (e.g. "2020-01-02T21:07:03Z")
+    "SSS identifier": getUserIdentifier(),
+    "osName": e.os.name,
+    "osVersion": e.os.version,
+    "browserName": e.browser.name,
+    "browserVersion": e.browser.version,
+  });
 }
 
 function loadingEvents() {
