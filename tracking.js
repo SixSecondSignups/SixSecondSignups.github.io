@@ -1,13 +1,17 @@
 function loadPage() {
   var referrer = document.referrer;
   var urlParams = new URLSearchParams(window.location.search);
-  var campaign = urlParams.get('utmCampaign');
   var otherProperties = {};
   if (referrer != null) {
     otherProperties['referrer'] = referrer;
   }
+  var campaign = urlParams.get('utmCampaign');
   if (campaign != null) {
     otherProperties['utmCampaign'] = campaign;
+  }
+  var uuid = urlParams.get('uuid');
+  if (uuid != null) {
+    otherProperties['uuid'] = uuid;
   }
   if (urlParams.toString() != null) {
     otherProperties['urlParams'] = urlParams.toString();
