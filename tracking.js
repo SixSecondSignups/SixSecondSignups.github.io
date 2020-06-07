@@ -1,5 +1,18 @@
 function loadPage() {
-  mixpanel.track("Page Load");
+  var referrer = document.referrer;
+  var urlParams = new URLSearchParams(window.location.search);
+  var campaign = urlParams.get('utmCampaign');
+  var otherProperties = {};
+  if (referrer != null) {
+    otherProperties['referrer'] = referrer;
+  }
+  if (campaign != null) {
+    otherProperties['utmCampaign'] = campaign;
+  }
+  if (urlParams.toString() != null) {
+    otherProperties['urlParams'] = urlParams.toString();
+  }
+  mixpanel.track("Page Load", otherProperties);
 }
 
 function loadPrivacyPage() {
@@ -96,10 +109,12 @@ function deleteAllCookies() {
 // Functions around identifying users
 
 function identifyUser() {
+  var user_identifier = getUserIdentifier();
+  mixpanel.identify(user_identifier);
   var e = deviceData.init();
   mixpanel.people.set({
     "First visit date": getFirstVisitDate(),    // Send dates in ISO timestamp format (e.g. "2020-01-02T21:07:03Z")
-    "SSS identifier": getUserIdentifier(),
+    "SSS identifier": user_identifier,
     "osName": e.os.name,
     "osVersion": e.os.version,
     "browserName": e.browser.name,
