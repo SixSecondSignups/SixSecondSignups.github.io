@@ -63,7 +63,7 @@ function getFirstVisitDate() {
   var firstVisitDate = getCookie("firstVisitDate");
   if (firstVisitDate == "") {
     var firstVisitDate = new Date().toISOString();
-    setCookie("identifier", firstVisitDate, 3650);
+    setCookie("firstVisitDate", firstVisitDate, 3650);
     return firstVisitDate;
   }
   return firstVisitDate;
