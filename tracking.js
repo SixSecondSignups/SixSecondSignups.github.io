@@ -102,8 +102,8 @@ function getCookie(cname) {
   return "";
 }
 
-function deleteAllCookies() {
-  document.cookie = "";
+function eraseCookie(cname) {   
+  document.cookie = cname+'=; Max-Age=-99999999;';  
 }
 
 // Functions around identifying users
