@@ -16,39 +16,57 @@ function loadPage() {
   if (urlParams.toString() != null) {
     otherProperties['urlParams'] = urlParams.toString();
   }
-  mixpanel.track("Page Load", otherProperties);
+  var eventName = "Page Load";
+  mixpanel.track(eventName, otherProperties);
+  amplitude.getInstance().logEvent(eventName, otherProperties);
 }
 
 function loadPrivacyPage() {
-  mixpanel.track("Privacy Page Load");
+  var eventName = "Privacy Page Load";
+  mixpanel.track(eventName);
+  amplitude.getInstance().logEvent(eventName);
 }
 
 function clickCTA() {
-  mixpanel.track("CTA Click");
+  var eventName = "CTA Click";
+  mixpanel.track(eventName);
+  amplitude.getInstance().logEvent(eventName);
 }
 
 function privacy() {
-  mixpanel.track("Privacy");
+  var eventName = "Privacy";
+  mixpanel.track(eventName);
+  amplitude.getInstance().logEvent(eventName);
 }
 
 function features() {
-  mixpanel.track("features");
+  var eventName = "features";
+  mixpanel.track(eventName);
+  amplitude.getInstance().logEvent(eventName);
 }
 
 function howitworks() {
-  mixpanel.track("howitworks");
+  var eventName = "howitworks";
+  mixpanel.track(eventName);
+  amplitude.getInstance().logEvent(eventName);
 }
 
 function pricing() {
-  mixpanel.track("pricing");
+  var eventName = "pricing";
+  mixpanel.track(eventName);
+  amplitude.getInstance().logEvent(eventName);
 }
 
 function contactMailLink() {
-  mixpanel.track("contactMailLink");
+  var eventName = "contactMailLink";
+  mixpanel.track(eventName);
+  amplitude.getInstance().logEvent(eventName);
 }
 
 function pressMailLink() {
-  mixpanel.track("pressMailLink");
+  var eventName = "pressMailLink";
+  mixpanel.track(eventName);
+  amplitude.getInstance().logEvent(eventName);
 }
 
 // Functions around setting unique IDs for users
@@ -116,14 +134,16 @@ function identifyUser() {
   var user_identifier = getUserIdentifier();
   mixpanel.identify(user_identifier);
   var e = deviceData.init();
-  mixpanel.people.set({
+  var userProperties = {
     "First visit date": getFirstVisitDate(),    // Send dates in ISO timestamp format (e.g. "2020-01-02T21:07:03Z")
     "SSS identifier": user_identifier,
     "osName": e.os.name,
     "osVersion": e.os.version,
     "browserName": e.browser.name,
     "browserVersion": e.browser.version,
-  });
+  };
+  mixpanel.people.set(userProperties);
+  amplitude.getInstance().setUserProperties(userProperties);
 }
 
 function loadingEvents() {
