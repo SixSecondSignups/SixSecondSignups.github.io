@@ -1,20 +1,45 @@
+var getParams = function (url) {
+  var params = {};
+  var parser = document.createElement('a');
+  parser.href = url;
+  var query = parser.search.substring(1);
+  var vars = query.split(/&|%26/);
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split('=');
+    params[pair[0]] = decodeURIComponent(pair[1]);
+  }
+  return [query, params];
+};
+
 function loadPage() {
   var referrer = document.referrer;
-  var urlParams = new URLSearchParams(window.location.search);
+  var url = window.location.href;
+  var paramData = getParams(url);
+  var query = paramData[0];
+  var urlParams = paramData[1];
   var otherProperties = {};
+
   if (referrer != null) {
     otherProperties['referrer'] = referrer;
   }
-  var campaign = urlParams.get('utmCampaign');
+  var campaign = urlParams['utmCampaign'];
   if (campaign != null) {
     otherProperties['utmCampaign'] = campaign;
   }
-  var uuid = urlParams.get('uuid');
+  var campaign = urlParams['utmSource'];
+  if (campaign != null) {
+    otherProperties['utmSource'] = campaign;
+  }
+  var campaign = urlParams['utmMedium'];
+  if (campaign != null) {
+    otherProperties['utmMedium'] = campaign;
+  }
+  var uuid = urlParams['uuid'];
   if (uuid != null) {
     otherProperties['uuid'] = uuid;
   }
   if (urlParams.toString() != null) {
-    otherProperties['urlParams'] = urlParams.toString();
+    otherProperties['urlParams'] = query;
   }
   var eventName = "Page Load";
   mixpanel.track(eventName, otherProperties);
